@@ -6,6 +6,7 @@ const hpp = require('hpp');
 const cors = require('cors');
 
 const courseRouter = require('./routes/courseRoutes')
+const orderRouter = require('./routes/orderRoutes')
 const reviewRouter = require('./routes/reviewRoutes')
 const teacherRouter = require('./routes/teacherRoutes')
 const userRouter = require('./routes/userRoutes')
@@ -18,6 +19,7 @@ app.use(xss());
 app.use(hpp());
 
 app.use('/api/v1/course', courseRouter);
+app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/review', reviewRouter);
 app.use('/api/v1/teacher', teacherRouter);
 app.use('/api/v1/user', userRouter);
