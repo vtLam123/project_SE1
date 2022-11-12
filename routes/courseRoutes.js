@@ -5,7 +5,7 @@ const courseRouter = express.Router();
 courseRouter.get('/')
 courseRouter.get('/:id')
 courseRouter.get('/recommend')
-courseRouter.get('/search')
+courseRouter.get('/search/:key')
 
 courseRouter.post('/create')
 courseRouter.patch('/update')
