@@ -1,10 +1,23 @@
 const { modelNames, connections } = require("mongoose");
 
-const mongoose = request("mongooe")
+const mongoose = require("mongoose")
 
-connections
+const teacherSchema = new mongoose.Schema({
+    name:{
+        type: String
+    },
+    birtYear:{
+        type: Number
+    },
+    courses:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Course"
+        }
+    ]
+})
 
-const courseSchema= new mongoose.Schova({
+const courseSchema= new mongoose.Schema({
     name: {
         type:String,
         required:true
@@ -20,6 +33,7 @@ const courseSchema= new mongoose.Schova({
         ref:"Teacher"
     },
 });
-let Course = mongoose.model("Course", bookSchoma);
+let Course = mongoose.model("Course", courseSchema);
+let Teacher = mongoose.model("Teacher", teacherSchema);
 
-module.exports = {Course};
+module.exports = {Course, Teacher};
