@@ -3,12 +3,13 @@ const teacherController = require("../controllers/teacherController");
 const express = require('express');
 const teacherRouter = express.Router();
 
-teacherRouter.get('/')
-teacherRouter.get('/:id')
+teacherRouter.get('/', teacherController.getAllTeachers)
+teacherRouter.get('/:id', teacherController.getATeacher)
 teacherRouter.get('/search/:key')
 
+// create a teacher 
+teacherRouter.post('/create', teacherController.addATeacher)
 
-teacherRouter.post('/create', teacherController.addTeacher)
 teacherRouter.patch('/update')
 
 teacherRouter.delete('/delete')

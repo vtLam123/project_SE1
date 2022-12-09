@@ -13,6 +13,7 @@ const userRouter = require('./routes/userRoutes')
 
 const app = express();
 
+app.use(express.json({ limit: '10mb' }));
 app.use(cors());
 app.use(mongoSanitize());
 app.use(xss());

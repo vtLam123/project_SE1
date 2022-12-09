@@ -1,13 +1,15 @@
 const express = require('express');
+const courseController = require('../controllers/courseController');
 const courseRouter = express.Router();
 
 
-courseRouter.get('/')
-courseRouter.get('/:id')
+courseRouter.get('/', courseController.getAllCourses)
+courseRouter.get('/:id', courseController.getAcourse)
 courseRouter.get('/recommend')
 courseRouter.get('/search/:key')
 
-courseRouter.post('/create')
+// CREACTE A BOOK 
+courseRouter.post('/create', courseController.addABook)
 courseRouter.patch('/update')
 
 courseRouter.delete('/delete')
