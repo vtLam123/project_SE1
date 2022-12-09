@@ -7,12 +7,10 @@ teacherRouter.get('/', teacherController.getAllTeachers)
 teacherRouter.get('/:id', teacherController.getATeacher)
 teacherRouter.get('/search/:key')
 
-// create a teacher 
-teacherRouter.post('/create', teacherController.addATeacher)
+teacherRouter.post('/create', teacherController.createATeacher)
+teacherRouter.patch('/:id', teacherController.updateATeacher)
 
-teacherRouter.patch('/update')
-
-teacherRouter.delete('/delete')
+teacherRouter.delete('/:id', teacherController.deleteATeacher)
 
 module.exports = teacherRouter;
 
